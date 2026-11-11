@@ -1,3 +1,35 @@
+name: Build Lotus Sleep for iPhone
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lotus-ios-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: xcode-27
+    timeout-minutes: 45
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Check out Lotus Sleep updates
+        uses: actions/checkout@v7
+        with:
+          path: lotus
+          persist-credentials: false
+
+      - name: Check out original Luma Sleep base
+        uses: actions/checkout@v7
+        with:
+          repository: ilinoisilmi/Luma-Sleep
+          ref: main
           path: luma-base
           persist-credentials: false
 
