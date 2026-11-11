@@ -1,35 +1,3 @@
-name: Build Lotus Sleep for iPhone
-
-on:
-  workflow_dispatch:
-
-permissions:
-  contents: read
-
-concurrency:
-  group: lotus-ios-${{ github.ref }}
-  cancel-in-progress: true
-
-jobs:
-  build:
-    runs-on: xcode-27
-    timeout-minutes: 45
-    defaults:
-      run:
-        shell: bash
-
-    steps:
-      - name: Check out Lotus Sleep updates
-        uses: actions/checkout@v7
-        with:
-          path: lotus
-          persist-credentials: false
-
-      - name: Check out original Luma Sleep base
-        uses: actions/checkout@v7
-        with:
-          repository: ilinoisilmi/Luma-Sleep
-          ref: main
           path: luma-base
           persist-credentials: false
 
@@ -38,8 +6,7 @@ jobs:
           set -euo pipefail
           mkdir -p merged/build/logs
 
-          # Lotus-Sleep contains a cumulative update, not the complete base.
-          # Begin with the original project and overlay every Lotus change.
+          # Lotus Sleep is currently an overlay on the original Luma project.
           rsync -a --exclude='.git/' --exclude='.github/' --exclude='build/' \
             luma-base/ merged/
           rsync -a --exclude='.git/' --exclude='.github/' --exclude='build/' \
@@ -68,8 +35,8 @@ jobs:
           from pathlib import Path
           info = plistlib.loads(Path('merged/Config/App-Info.plist').read_bytes())
           if info.get('CFBundleDisplayName') != 'Lotus Sleep':
-              raise SystemExit('Lotus updates were not overlaid correctly.')
-          print('Confirmed display name: Lotus Sleep')
+              raise SystemExit('Lotus overlay did not set the app display name.')
+          print('Confirmed iPhone display name: Lotus Sleep')
           PY
 
       - name: Check Xcode and iPhone SDK
@@ -82,10 +49,10 @@ jobs:
           from pathlib import Path
           major = int(Path('build/logs/iphone-sdk.txt').read_text().strip().split('.')[0])
           if major < 26:
-              raise SystemExit('An iPhoneOS SDK 26 or newer is required.')
+              raise SystemExit('iPhoneOS SDK 26 or newer is required.')
           PY
 
-      - name: Audit project and test packaging
+      - name: Audit project and test IPA packaging
         working-directory: merged
         run: |
           set -euo pipefail
@@ -93,3 +60,60 @@ jobs:
             2>&1 | tee build/logs/project-audit.txt
           python3 -m unittest discover -s Scripts -p 'test_package_ipa.py' \
             2>&1 | tee build/logs/packaging-tests.txt
+
+      - name: Run Swift core tests
+        working-directory: merged
+        run: |
+          set -euo pipefail
+          swift test --package-path Core -j 1 -Xswiftc -disable-batch-mode \
+            2>&1 | tee build/logs/core-tests.txt
+
+      - name: Build and package unsigned Lotus iPhone IPA
+        working-directory: merged
+        run: |
+          set -euo pipefail
+          bash Scripts/build_unsigned_ipa.sh
+
+          # The original build script outputs LumaSleep-unsigned.ipa.
+          # Keep its verified build/packaging procedure and rename only the export.
+          test -s build/export/LumaSleep-unsigned.ipa
+          mv build/export/LumaSleep-unsigned.ipa \
+            build/export/LotusSleep-unsigned.ipa
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib
+          import zipfile
+
+          export = Path('build/export')
+          ipa = export / 'LotusSleep-unsigned.ipa'
+          with zipfile.ZipFile(ipa) as archive:
+              if archive.testzip() is not None:
+                  raise SystemExit('IPA ZIP integrity test failed')
+              if not any(name.startswith('Payload/LumaSleep.app/') for name in archive.namelist()):
+                  raise SystemExit('IPA does not contain the built iPhone app')
+          digest = hashlib.sha256(ipa.read_bytes()).hexdigest()
+          (export / 'SHA256.txt').write_text(f'{digest}  {ipa.name}\n')
+          notes = export / 'READ_ME.txt'
+          if notes.exists():
+              notes.write_text(notes.read_text().replace('Luma Sleep:', 'Lotus Sleep:'))
+          print(f'IPA ready: {ipa} ({ipa.stat().st_size:,} bytes)')
+          PY
+
+      - name: Upload Lotus Sleep IPA for Sideloadly
+        uses: actions/upload-artifact@v7
+        with:
+          name: LotusSleep-unsigned-ipa
+          path: merged/build/export/
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
+
+      - name: Upload build diagnostics
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: LotusSleep-build-logs
+          path: merged/build/logs/
+          if-no-files-found: warn
+          retention-days: 7
