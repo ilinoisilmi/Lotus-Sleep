@@ -1,0 +1,95 @@
+name: Build Lotus Sleep for iPhone
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lotus-ios-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: xcode-27
+    timeout-minutes: 45
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Check out Lotus Sleep updates
+        uses: actions/checkout@v7
+        with:
+          path: lotus
+          persist-credentials: false
+
+      - name: Check out original Luma Sleep base
+        uses: actions/checkout@v7
+        with:
+          repository: ilinoisilmi/Luma-Sleep
+          ref: main
+          path: luma-base
+          persist-credentials: false
+
+      - name: Assemble complete Lotus Sleep source
+        run: |
+          set -euo pipefail
+          mkdir -p merged/build/logs
+
+          # Lotus-Sleep contains a cumulative update, not the complete base.
+          # Begin with the original project and overlay every Lotus change.
+          rsync -a --exclude='.git/' --exclude='.github/' --exclude='build/' \
+            luma-base/ merged/
+          rsync -a --exclude='.git/' --exclude='.github/' --exclude='build/' \
+            lotus/ merged/
+
+          git -C luma-base rev-parse HEAD > merged/build/logs/luma-base-commit.txt
+          git -C lotus rev-parse HEAD > merged/build/logs/lotus-update-commit.txt
+
+          for file in \
+            LumaSleep.xcodeproj/project.pbxproj \
+            LumaSleep.xcodeproj/xcshareddata/xcschemes/LumaBasic.xcscheme \
+            Core/Package.swift \
+            Scripts/build_unsigned_ipa.sh \
+            Scripts/package_ipa.py \
+            Scripts/test_package_ipa.py \
+            Scripts/audit_project.py \
+            Config/App-Info.plist; do
+            if [[ ! -f "merged/$file" ]]; then
+              echo "Missing required file: $file" >&2
+              exit 1
+            fi
+          done
+
+          python3 - <<'PY'
+          import plistlib
+          from pathlib import Path
+          info = plistlib.loads(Path('merged/Config/App-Info.plist').read_bytes())
+          if info.get('CFBundleDisplayName') != 'Lotus Sleep':
+              raise SystemExit('Lotus updates were not overlaid correctly.')
+          print('Confirmed display name: Lotus Sleep')
+          PY
+
+      - name: Check Xcode and iPhone SDK
+        working-directory: merged
+        run: |
+          set -euo pipefail
+          xcodebuild -version | tee build/logs/xcode-version.txt
+          xcrun --sdk iphoneos --show-sdk-version | tee build/logs/iphone-sdk.txt
+          python3 - <<'PY'
+          from pathlib import Path
+          major = int(Path('build/logs/iphone-sdk.txt').read_text().strip().split('.')[0])
+          if major < 26:
+              raise SystemExit('An iPhoneOS SDK 26 or newer is required.')
+          PY
+
+      - name: Audit project and test packaging
+        working-directory: merged
+        run: |
+          set -euo pipefail
+          python3 Scripts/audit_project.py \
+            2>&1 | tee build/logs/project-audit.txt
+          python3 -m unittest discover -s Scripts -p 'test_package_ipa.py' \
+            2>&1 | tee build/logs/packaging-tests.txt
