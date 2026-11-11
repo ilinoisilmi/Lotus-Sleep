@@ -1,0 +1,11 @@
+PASS: Basic native source syntax parse (43 files); Apple API type checking not performed.
+PASS: Health native source syntax parse (43 files); Apple API type checking not performed.
+PASS: Widget source syntax parse; execution not performed.
+PASS: Tests source syntax parse; execution not performed.
+PASS: 98 core XCTest cases, zero failures; 27 new experience tests.
+PASS: Four IPA packaging tests on synthetic fixtures (not an iOS app build).
+PASS: Bash syntax checks for build_unsigned_ipa.sh and verify_on_mac.sh.
+PASS: Original vector sheet rendered and visually inspected: four pets, five stages.
+PASS: git diff --check.
+Remote base verified: bf9a3f38ba4a01558930b2ad9f0362a3598835cc; no push performed.
+NOT RUN: Xcode compile, simulator/UI execution, signing, iPhone install or hardware tests.

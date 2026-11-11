@@ -1,0 +1,257 @@
+[0/1] Planning build
+Building for debugging...
+[0/10] Write sources
+[2/10] Write swift-version--5E2ADFF7CB68EA5F.txt
+[4/16] Emitting module LumaCore
+[5/16] Compiling LumaCore RestCompanions.swift
+[6/16] Compiling LumaCore SleepExperiences.swift
+[7/18] Compiling LumaCore MorningInbox.swift
+[8/18] Compiling LumaCore Persistence.swift
+[9/18] Compiling LumaCore Models.swift
+[10/21] Compiling LumaCore DemoData.swift
+[11/21] Compiling LumaCore NightReview.swift
+[12/21] Compiling LumaCore Reconciliation.swift
+[13/21] Compiling LumaCore Personalization.swift
+[14/21] Compiling LumaCore Insights.swift
+[15/22] Wrapping AST for LumaCore for debugging
+[17/28] Compiling LumaCoreTests SleepExperiencesTests.swift
+[18/28] Compiling LumaCoreTests PersonalizationTests.swift
+[19/28] Compiling LumaCoreTests RegressionTests.swift
+[20/28] Emitting module LumaCoreTests
+[21/28] Compiling LumaCoreTests NightReviewTests.swift
+[22/28] Compiling LumaCoreTests LumaCoreTests.swift
+[23/31] /workspace/scratch/bdad0945f82d/Noxli/Core/.build/x86_64-unknown-linux-gnu/debug/LumaCorePackageDiscoveredTests.derived/all-discovered-tests.swift
+[24/32] Write sources
+[25/32] Wrapping AST for LumaCoreTests for debugging
+[27/35] Compiling LumaCorePackageDiscoveredTests LumaCoreTests.swift
+[28/35] Emitting module LumaCorePackageDiscoveredTests
+[29/35] Compiling LumaCorePackageDiscoveredTests all-discovered-tests.swift
+[30/36] /workspace/scratch/bdad0945f82d/Noxli/Core/.build/x86_64-unknown-linux-gnu/debug/LumaCorePackageTests.derived/runner.swift
+[31/36] Write sources
+[32/36] Wrapping AST for LumaCorePackageDiscoveredTests for debugging
+[34/38] Emitting module LumaCorePackageTests
+[35/38] Compiling LumaCorePackageTests runner.swift
+[36/38] Write Objects.LinkFileList
+[37/38] Linking LumaCorePackageTests.xctest
+Build complete! (4.62s)
+Test Suite 'All tests' started at 2026-11-11 19:33:34.999
+Test Suite 'debug.xctest' started at 2026-11-11 19:33:35.000
+Test Suite 'LumaCoreTests' started at 2026-11-11 19:33:35.000
+Test Case 'LumaCoreTests.testAtomicStorageRoundTrip' started at 2026-11-11 19:33:35.000
+Test Case 'LumaCoreTests.testAtomicStorageRoundTrip' passed (0.004 seconds)
+Test Case 'LumaCoreTests.testBedtimeSurvivesSerializationAndEndIsNotSleep' started at 2026-11-11 19:33:35.004
+Test Case 'LumaCoreTests.testBedtimeSurvivesSerializationAndEndIsNotSleep' passed (0.005 seconds)
+Test Case 'LumaCoreTests.testCSVQuotedNewlineAndEscapedQuote' started at 2026-11-11 19:33:35.010
+Test Case 'LumaCoreTests.testCSVQuotedNewlineAndEscapedQuote' passed (0.0 seconds)
+Test Case 'LumaCoreTests.testCalendarDSTDayIsNotAssumed24Hours' started at 2026-11-11 19:33:35.010
+Test Case 'LumaCoreTests.testCalendarDSTDayIsNotAssumed24Hours' passed (0.001 seconds)
+Test Case 'LumaCoreTests.testChangedImportIDRejected' started at 2026-11-11 19:33:35.010
+Test Case 'LumaCoreTests.testChangedImportIDRejected' passed (0.002 seconds)
+Test Case 'LumaCoreTests.testCircularRegularityAcrossMidnight' started at 2026-11-11 19:33:35.013
+Test Case 'LumaCoreTests.testCircularRegularityAcrossMidnight' passed (0.002 seconds)
+Test Case 'LumaCoreTests.testCorrectionCanBeUndoneWithoutChangingOriginal' started at 2026-11-11 19:33:35.015
+Test Case 'LumaCoreTests.testCorrectionCanBeUndoneWithoutChangingOriginal' passed (0.001 seconds)
+Test Case 'LumaCoreTests.testDeletedHealthRecordExcluded' started at 2026-11-11 19:33:35.016
+Test Case 'LumaCoreTests.testDeletedHealthRecordExcluded' passed (0.001 seconds)
+Test Case 'LumaCoreTests.testDuplicateSessionStartRejected' started at 2026-11-11 19:33:35.017
+Test Case 'LumaCoreTests.testDuplicateSessionStartRejected' passed (0.0 seconds)
+Test Case 'LumaCoreTests.testEfficiencyRequiresBedEvidence' started at 2026-11-11 19:33:35.017
+Test Case 'LumaCoreTests.testEfficiencyRequiresBedEvidence' passed (0.002 seconds)
+Test Case 'LumaCoreTests.testEnergyRequiresData' started at 2026-11-11 19:33:35.019
+Test Case 'LumaCoreTests.testEnergyRequiresData' passed (0.0 seconds)
+Test Case 'LumaCoreTests.testExtraSleepDoesNotRepayOtherDays' started at 2026-11-11 19:33:35.019
+Test Case 'LumaCoreTests.testExtraSleepDoesNotRepayOtherDays' passed (0.002 seconds)
+Test Case 'LumaCoreTests.testFallDSTUsesElapsedTime' started at 2026-11-11 19:33:35.021
+Test Case 'LumaCoreTests.testFallDSTUsesElapsedTime' passed (0.001 seconds)
+Test Case 'LumaCoreTests.testFutureVersionRejected' started at 2026-11-11 19:33:35.021
+Test Case 'LumaCoreTests.testFutureVersionRejected' passed (0.0 seconds)
+Test Case 'LumaCoreTests.testInvalidRowsAreReportedAndNotImported' started at 2026-11-11 19:33:35.022
+Test Case 'LumaCoreTests.testInvalidRowsAreReportedAndNotImported' passed (0.0 seconds)
+Test Case 'LumaCoreTests.testJSONMatchesCSVExample' started at 2026-11-11 19:33:35.022
+Test Case 'LumaCoreTests.testJSONMatchesCSVExample' passed (0.001 seconds)
+Test Case 'LumaCoreTests.testMidnightAndUnknownGap' started at 2026-11-11 19:33:35.023
+Test Case 'LumaCoreTests.testMidnightAndUnknownGap' passed (0.001 seconds)
+Test Case 'LumaCoreTests.testMigrationFromV1' started at 2026-11-11 19:33:35.024
+Test Case 'LumaCoreTests.testMigrationFromV1' passed (0.001 seconds)
+Test Case 'LumaCoreTests.testMissingNightsRemainUnknown' started at 2026-11-11 19:33:35.025
+Test Case 'LumaCoreTests.testMissingNightsRemainUnknown' passed (0.002 seconds)
+Test Case 'LumaCoreTests.testNapsCountOnceInSleepDay' started at 2026-11-11 19:33:35.027
+Test Case 'LumaCoreTests.testNapsCountOnceInSleepDay' passed (0.002 seconds)
+Test Case 'LumaCoreTests.testOverlapNeverDoubleCounts' started at 2026-11-11 19:33:35.028
+Test Case 'LumaCoreTests.testOverlapNeverDoubleCounts' passed (0.001 seconds)
+Test Case 'LumaCoreTests.testPlannerAccountsForWindDownAndSettling' started at 2026-11-11 19:33:35.030
+Test Case 'LumaCoreTests.testPlannerAccountsForWindDownAndSettling' passed (0.0 seconds)
+Test Case 'LumaCoreTests.testRepeatImportAndRoundTrip' started at 2026-11-11 19:33:35.030
+Test Case 'LumaCoreTests.testRepeatImportAndRoundTrip' passed (0.003 seconds)
+Test Case 'LumaCoreTests.testSameSourceAwakeBeatsGenericAsleep' started at 2026-11-11 19:33:35.034
+Test Case 'LumaCoreTests.testSameSourceAwakeBeatsGenericAsleep' passed (0.001 seconds)
+Test Case 'LumaCoreTests.testSourcePriorityAndAwake' started at 2026-11-11 19:33:35.035
+Test Case 'LumaCoreTests.testSourcePriorityAndAwake' passed (0.102 seconds)
+Test Case 'LumaCoreTests.testSplitSleepAndOverlappingAwakenings' started at 2026-11-11 19:33:35.136
+Test Case 'LumaCoreTests.testSplitSleepAndOverlappingAwakenings' passed (0.003 seconds)
+Test Case 'LumaCoreTests.testSpringDSTUsesElapsedTime' started at 2026-11-11 19:33:35.139
+Test Case 'LumaCoreTests.testSpringDSTUsesElapsedTime' passed (0.001 seconds)
+Test Case 'LumaCoreTests.testTravelOffsets' started at 2026-11-11 19:33:35.140
+Test Case 'LumaCoreTests.testTravelOffsets' passed (0.001 seconds)
+Test Suite 'LumaCoreTests' passed at 2026-11-11 19:33:35.141
+	 Executed 28 tests, with 0 failures (0 unexpected) in 0.141 (0.141) seconds
+Test Suite 'NightReviewTests' started at 2026-11-11 19:33:35.141
+Test Case 'NightReviewTests.testEndingBedtimeClosesItsWakeLogForAllCallers' started at 2026-11-11 19:33:35.141
+Test Case 'NightReviewTests.testEndingBedtimeClosesItsWakeLogForAllCallers' passed (0.0 seconds)
+Test Case 'NightReviewTests.testFinishWakeDoesNotEndBedtimeAndDoesNotInventSleep' started at 2026-11-11 19:33:35.141
+Test Case 'NightReviewTests.testFinishWakeDoesNotEndBedtimeAndDoesNotInventSleep' passed (0.0 seconds)
+Test Case 'NightReviewTests.testIncludedWakeTimeReducesDiarySleepOnlyOnce' started at 2026-11-11 19:33:35.141
+Test Case 'NightReviewTests.testIncludedWakeTimeReducesDiarySleepOnlyOnce' passed (0.0 seconds)
+Test Case 'NightReviewTests.testInvalidWakeIntervalsAndDuplicateOpenLogsRejected' started at 2026-11-11 19:33:35.142
+Test Case 'NightReviewTests.testInvalidWakeIntervalsAndDuplicateOpenLogsRejected' passed (0.0 seconds)
+Test Case 'NightReviewTests.testLegacySoundEventsDecodeWithoutReplayOffset' started at 2026-11-11 19:33:35.142
+Test Case 'NightReviewTests.testLegacySoundEventsDecodeWithoutReplayOffset' passed (0.0 seconds)
+Test Case 'NightReviewTests.testLiveWakePersistsAndRepeatedTapDoesNotDuplicate' started at 2026-11-11 19:33:35.142
+Test Case 'NightReviewTests.testLiveWakePersistsAndRepeatedTapDoesNotDuplicate' passed (0.001 seconds)
+Test Case 'NightReviewTests.testLongNoiseIsBoundedIntoReplayableEvents' started at 2026-11-11 19:33:35.143
+Test Case 'NightReviewTests.testLongNoiseIsBoundedIntoReplayableEvents' passed (0.0 seconds)
+Test Case 'NightReviewTests.testMissingDataAndQualityOverride' started at 2026-11-11 19:33:35.143
+Test Case 'NightReviewTests.testMissingDataAndQualityOverride' passed (0.0 seconds)
+Test Case 'NightReviewTests.testQuickDurationDoesNotInventBedtimeOrEfficiency' started at 2026-11-11 19:33:35.143
+Test Case 'NightReviewTests.testQuickDurationDoesNotInventBedtimeOrEfficiency' passed (0.0 seconds)
+Test Case 'NightReviewTests.testReviewWakeIntervalsMergeClipAndIgnoreOpenLogs' started at 2026-11-11 19:33:35.143
+Test Case 'NightReviewTests.testReviewWakeIntervalsMergeClipAndIgnoreOpenLogs' passed (0.0 seconds)
+Test Case 'NightReviewTests.testShortSoundHasAudioFrameOffsetAndEndsAfterQuiet' started at 2026-11-11 19:33:35.143
+Test Case 'NightReviewTests.testShortSoundHasAudioFrameOffsetAndEndsAfterQuiet' passed (0.0 seconds)
+Test Case 'NightReviewTests.testSoundCalibrationIgnoresStableFan' started at 2026-11-11 19:33:35.144
+Test Case 'NightReviewTests.testSoundCalibrationIgnoresStableFan' passed (0.0 seconds)
+Test Case 'NightReviewTests.testSubsecondWakeCannotBecomeAnInvalidWholeSecondBackup' started at 2026-11-11 19:33:35.144
+Test Case 'NightReviewTests.testSubsecondWakeCannotBecomeAnInvalidWholeSecondBackup' passed (0.0 seconds)
+Test Case 'NightReviewTests.testTransientIsDiscardedAndLastEventFlushesOnStop' started at 2026-11-11 19:33:35.144
+Test Case 'NightReviewTests.testTransientIsDiscardedAndLastEventFlushesOnStop' passed (0.0 seconds)
+Test Case 'NightReviewTests.testV2MigrationPreservesExistingSleepAndStartsEmptyWakeLog' started at 2026-11-11 19:33:35.144
+Test Case 'NightReviewTests.testV2MigrationPreservesExistingSleepAndStartsEmptyWakeLog' passed (0.001 seconds)
+Test Suite 'NightReviewTests' passed at 2026-11-11 19:33:35.145
+	 Executed 15 tests, with 0 failures (0 unexpected) in 0.004 (0.004) seconds
+Test Suite 'PersonalizationTests' started at 2026-11-11 19:33:35.145
+Test Case 'PersonalizationTests.testAdultWarningsUseChosenCapAndGeneralReference' started at 2026-11-11 19:33:35.145
+Test Case 'PersonalizationTests.testAdultWarningsUseChosenCapAndGeneralReference' passed (0.0 seconds)
+Test Case 'PersonalizationTests.testAdultWithUncertainContextGetsIndividualAdvice' started at 2026-11-11 19:33:35.145
+Test Case 'PersonalizationTests.testAdultWithUncertainContextGetsIndividualAdvice' passed (0.0 seconds)
+Test Case 'PersonalizationTests.testAlarmOrShiftWorkSuppressesChronotypeLabel' started at 2026-11-11 19:33:35.145
+Test Case 'PersonalizationTests.testAlarmOrShiftWorkSuppressesChronotypeLabel' passed (0.0 seconds)
+Test Case 'PersonalizationTests.testAllFreeDaysDoNotInventWorkdayGap' started at 2026-11-11 19:33:35.146
+Test Case 'PersonalizationTests.testAllFreeDaysDoNotInventWorkdayGap' passed (0.0 seconds)
+Test Case 'PersonalizationTests.testCaffeineTotalsUseReportingTimezoneAndExcludeNextDayBoundary' started at 2026-11-11 19:33:35.146
+Test Case 'PersonalizationTests.testCaffeineTotalsUseReportingTimezoneAndExcludeNextDayBoundary' passed (0.001 seconds)
+Test Case 'PersonalizationTests.testCustomSoundRejectsPathTraversalAndInvalidDuration' started at 2026-11-11 19:33:35.147
+Test Case 'PersonalizationTests.testCustomSoundRejectsPathTraversalAndInvalidDuration' passed (0.0 seconds)
+Test Case 'PersonalizationTests.testInvalidAndDuplicateCaffeineEntriesRejected' started at 2026-11-11 19:33:35.147
+Test Case 'PersonalizationTests.testInvalidAndDuplicateCaffeineEntriesRejected' passed (0.0 seconds)
+Test Case 'PersonalizationTests.testInvalidProfileAnswersAndWindowsRejected' started at 2026-11-11 19:33:35.147
+Test Case 'PersonalizationTests.testInvalidProfileAnswersAndWindowsRejected' passed (0.0 seconds)
+Test Case 'PersonalizationTests.testMidnightSleepAndExtraFreeDaySleepCorrection' started at 2026-11-11 19:33:35.148
+Test Case 'PersonalizationTests.testMidnightSleepAndExtraFreeDaySleepCorrection' passed (0.0 seconds)
+Test Case 'PersonalizationTests.testProfileAndCaffeineRoundTrip' started at 2026-11-11 19:33:35.148
+Test Case 'PersonalizationTests.testProfileAndCaffeineRoundTrip' passed (0.102 seconds)
+Test Case 'PersonalizationTests.testReminderTogglesAndFingerprintDetectScheduleChanges' started at 2026-11-11 19:33:35.250
+Test Case 'PersonalizationTests.testReminderTogglesAndFingerprintDetectScheduleChanges' passed (0.001 seconds)
+Test Case 'PersonalizationTests.testScheduleGapWrapsAcrossMidnight' started at 2026-11-11 19:33:35.251
+Test Case 'PersonalizationTests.testScheduleGapWrapsAcrossMidnight' passed (0.0 seconds)
+Test Case 'PersonalizationTests.testSensitivityChangesCutoffWithoutCalculatingDose' started at 2026-11-11 19:33:35.251
+Test Case 'PersonalizationTests.testSensitivityChangesCutoffWithoutCalculatingDose' passed (0.002 seconds)
+Test Case 'PersonalizationTests.testTeenAndUnknownAgeNeverUseAdultDoseReference' started at 2026-11-11 19:33:35.253
+Test Case 'PersonalizationTests.testTeenAndUnknownAgeNeverUseAdultDoseReference' passed (0.0 seconds)
+Test Case 'PersonalizationTests.testV3MigrationPreservesHistoryAndDoesNotInventProfileOrCaffeine' started at 2026-11-11 19:33:35.253
+Test Case 'PersonalizationTests.testV3MigrationPreservesHistoryAndDoesNotInventProfileOrCaffeine' passed (0.102 seconds)
+Test Case 'PersonalizationTests.testWeeklyNotificationsAreUniqueAndUsePreviousEvening' started at 2026-11-11 19:33:35.355
+Test Case 'PersonalizationTests.testWeeklyNotificationsAreUniqueAndUsePreviousEvening' passed (0.001 seconds)
+Test Suite 'PersonalizationTests' passed at 2026-11-11 19:33:35.356
+	 Executed 16 tests, with 0 failures (0 unexpected) in 0.211 (0.211) seconds
+Test Suite 'RegressionTests' started at 2026-11-11 19:33:35.356
+Test Case 'RegressionTests.testBlankSourceIDRejectedBeforeNamespaceIsAdded' started at 2026-11-11 19:33:35.356
+Test Case 'RegressionTests.testBlankSourceIDRejectedBeforeNamespaceIsAdded' passed (0.001 seconds)
+Test Case 'RegressionTests.testBoundarySplitConservesElapsedTime' started at 2026-11-11 19:33:35.357
+Test Case 'RegressionTests.testBoundarySplitConservesElapsedTime' passed (0.001 seconds)
+Test Case 'RegressionTests.testDiaryRevisionUndoPreservesOriginalVersion' started at 2026-11-11 19:33:35.359
+Test Case 'RegressionTests.testDiaryRevisionUndoPreservesOriginalVersion' passed (0.001 seconds)
+Test Case 'RegressionTests.testDuplicateDiaryIDsRejected' started at 2026-11-11 19:33:35.360
+Test Case 'RegressionTests.testDuplicateDiaryIDsRejected' passed (0.001 seconds)
+Test Case 'RegressionTests.testDuplicateRevisionIDsRejected' started at 2026-11-11 19:33:35.361
+Test Case 'RegressionTests.testDuplicateRevisionIDsRejected' passed (0.001 seconds)
+Test Case 'RegressionTests.testEndedSessionCannotEndAgain' started at 2026-11-11 19:33:35.362
+Test Case 'RegressionTests.testEndedSessionCannotEndAgain' passed (0.001 seconds)
+Test Case 'RegressionTests.testInvalidBackupCannotOverwriteExistingSnapshot' started at 2026-11-11 19:33:35.363
+Test Case 'RegressionTests.testInvalidBackupCannotOverwriteExistingSnapshot' passed (0.001 seconds)
+Test Case 'RegressionTests.testMaliciousAudioPathRejected' started at 2026-11-11 19:33:35.364
+Test Case 'RegressionTests.testMaliciousAudioPathRejected' passed (0.0 seconds)
+Test Case 'RegressionTests.testNapOverlappingMainSleepNeverCountsTwice' started at 2026-11-11 19:33:35.364
+Test Case 'RegressionTests.testNapOverlappingMainSleepNeverCountsTwice' passed (0.001 seconds)
+Test Case 'RegressionTests.testRepeatedRowsWithinOneImportAreDeduplicated' started at 2026-11-11 19:33:35.365
+Test Case 'RegressionTests.testRepeatedRowsWithinOneImportAreDeduplicated' passed (0.001 seconds)
+Test Case 'RegressionTests.testReportingZoneChangeDoesNotChangeSourceInstants' started at 2026-11-11 19:33:35.367
+Test Case 'RegressionTests.testReportingZoneChangeDoesNotChangeSourceInstants' passed (0.002 seconds)
+Test Case 'RegressionTests.testUnconfirmedBedtimeDoesNotBecomeZeroSleepOrShortfall' started at 2026-11-11 19:33:35.368
+Test Case 'RegressionTests.testUnconfirmedBedtimeDoesNotBecomeZeroSleepOrShortfall' passed (0.001 seconds)
+Test Suite 'RegressionTests' passed at 2026-11-11 19:33:35.370
+	 Executed 12 tests, with 0 failures (0 unexpected) in 0.013 (0.013) seconds
+Test Suite 'SleepExperiencesTests' started at 2026-11-11 19:33:35.370
+Test Case 'SleepExperiencesTests.testAllFivePetStagesUseStoredPersonalAwards' started at 2026-11-11 19:33:35.370
+Test Case 'SleepExperiencesTests.testAllFivePetStagesUseStoredPersonalAwards' passed (0.001 seconds)
+Test Case 'SleepExperiencesTests.testBalancedExperimentHasSevenOfEach' started at 2026-11-11 19:33:35.371
+Test Case 'SleepExperiencesTests.testBalancedExperimentHasSevenOfEach' passed (0.0 seconds)
+Test Case 'SleepExperiencesTests.testClosedUnloggedDayRequiresVerification' started at 2026-11-11 19:33:35.371
+Test Case 'SleepExperiencesTests.testClosedUnloggedDayRequiresVerification' passed (0.012 seconds)
+Test Case 'SleepExperiencesTests.testComparisonDoesNotBecomeReadyWithOnlyTwoOfOneOption' started at 2026-11-11 19:33:35.383
+Test Case 'SleepExperiencesTests.testComparisonDoesNotBecomeReadyWithOnlyTwoOfOneOption' passed (0.002 seconds)
+Test Case 'SleepExperiencesTests.testComparisonUsesActualConditionAndExcludesMissingAndSkipped' started at 2026-11-11 19:33:35.385
+Test Case 'SleepExperiencesTests.testComparisonUsesActualConditionAndExcludesMissingAndSkipped' passed (0.002 seconds)
+Test Case 'SleepExperiencesTests.testExperimentDatesSurviveDSTAndReportingTimezoneChanges' started at 2026-11-11 19:33:35.387
+Test Case 'SleepExperiencesTests.testExperimentDatesSurviveDSTAndReportingTimezoneChanges' passed (0.001 seconds)
+Test Case 'SleepExperiencesTests.testExperimentRejectsFutureAndArchivedEditsWithoutMutation' started at 2026-11-11 19:33:35.389
+Test Case 'SleepExperiencesTests.testExperimentRejectsFutureAndArchivedEditsWithoutMutation' passed (0.101 seconds)
+Test Case 'SleepExperiencesTests.testFutureSleepCannotEarnCurrentDay' started at 2026-11-11 19:33:35.490
+Test Case 'SleepExperiencesTests.testFutureSleepCannotEarnCurrentDay' passed (0.024 seconds)
+Test Case 'SleepExperiencesTests.testInboxDueBoundaryAndCompletion' started at 2026-11-11 19:33:35.513
+Test Case 'SleepExperiencesTests.testInboxDueBoundaryAndCompletion' passed (0.002 seconds)
+Test Case 'SleepExperiencesTests.testInboxExpiredFlagsClearAndUpcomingNotesStayScheduled' started at 2026-11-11 19:33:35.515
+Test Case 'SleepExperiencesTests.testInboxExpiredFlagsClearAndUpcomingNotesStayScheduled' passed (0.001 seconds)
+Test Case 'SleepExperiencesTests.testInboxLimitsPendingNotificationsWithoutLimitingUnscheduledNotes' started at 2026-11-11 19:33:35.516
+Test Case 'SleepExperiencesTests.testInboxLimitsPendingNotificationsWithoutLimitingUnscheduledNotes' passed (0.006 seconds)
+Test Case 'SleepExperiencesTests.testInboxRejectsDuplicateBlankLongAndCompletedNotifications' started at 2026-11-11 19:33:35.523
+Test Case 'SleepExperiencesTests.testInboxRejectsDuplicateBlankLongAndCompletedNotifications' passed (0.001 seconds)
+Test Case 'SleepExperiencesTests.testMixGainNormalizationAndFadeNeverExceedMaster' started at 2026-11-11 19:33:35.523
+Test Case 'SleepExperiencesTests.testMixGainNormalizationAndFadeNeverExceedMaster' passed (0.0 seconds)
+Test Case 'SleepExperiencesTests.testMixKeepsQuietSingleLayerQuiet' started at 2026-11-11 19:33:35.524
+Test Case 'SleepExperiencesTests.testMixKeepsQuietSingleLayerQuiet' passed (0.0 seconds)
+Test Case 'SleepExperiencesTests.testMixRejectsDuplicateEmptySilentAndExcessLayers' started at 2026-11-11 19:33:35.524
+Test Case 'SleepExperiencesTests.testMixRejectsDuplicateEmptySilentAndExcessLayers' passed (0.0 seconds)
+Test Case 'SleepExperiencesTests.testMixRejectsUnknownSoundAndNonfiniteVolume' started at 2026-11-11 19:33:35.524
+Test Case 'SleepExperiencesTests.testMixRejectsUnknownSoundAndNonfiniteVolume' passed (0.0 seconds)
+Test Case 'SleepExperiencesTests.testMorningReportUpsertsAndRequiresRatingOrSkip' started at 2026-11-11 19:33:35.524
+Test Case 'SleepExperiencesTests.testMorningReportUpsertsAndRequiresRatingOrSkip' passed (0.001 seconds)
+Test Case 'SleepExperiencesTests.testNapsContributeButNapQualityDoesNotOverrideMainNight' started at 2026-11-11 19:33:35.526
+Test Case 'SleepExperiencesTests.testNapsContributeButNapQualityDoesNotOverrideMainNight' passed (0.011 seconds)
+Test Case 'SleepExperiencesTests.testNewExperiencesRoundTripIncludingMissingCustomReference' started at 2026-11-11 19:33:35.537
+Test Case 'SleepExperiencesTests.testNewExperiencesRoundTripIncludingMissingCustomReference' passed (0.013 seconds)
+Test Case 'SleepExperiencesTests.testOpenWakeCrossingWindowNeverHasNegativeDuration' started at 2026-11-11 19:33:35.550
+Test Case 'SleepExperiencesTests.testOpenWakeCrossingWindowNeverHasNegativeDuration' passed (0.001 seconds)
+Test Case 'SleepExperiencesTests.testPetSwitchAndRelaunchCannotCreditSameSleepDayTwice' started at 2026-11-11 19:33:35.551
+Test Case 'SleepExperiencesTests.testPetSwitchAndRelaunchCannotCreditSameSleepDayTwice' passed (0.047 seconds)
+Test Case 'SleepExperiencesTests.testPoorRatedNightBreaksClosedStreakButDoesNotRemoveAppearance' started at 2026-11-11 19:33:35.598
+Test Case 'SleepExperiencesTests.testPoorRatedNightBreaksClosedStreakButDoesNotRemoveAppearance' passed (0.024 seconds)
+Test Case 'SleepExperiencesTests.testRewindClipsEvidenceAndKeepsSourcesAndUnknownGaps' started at 2026-11-11 19:33:35.622
+Test Case 'SleepExperiencesTests.testRewindClipsEvidenceAndKeepsSourcesAndUnknownGaps' passed (0.001 seconds)
+Test Case 'SleepExperiencesTests.testSnapshotRejectsMultipleActiveExperiments' started at 2026-11-11 19:33:35.623
+Test Case 'SleepExperiencesTests.testSnapshotRejectsMultipleActiveExperiments' passed (0.001 seconds)
+Test Case 'SleepExperiencesTests.testSoundDoesNotFillUnknownSleepAndHasDirectReplayIdentifiers' started at 2026-11-11 19:33:35.623
+Test Case 'SleepExperiencesTests.testSoundDoesNotFillUnknownSleepAndHasDirectReplayIdentifiers' passed (0.001 seconds)
+Test Case 'SleepExperiencesTests.testThreeGoodNightsAndUnfinishedCurrentDayKeepStreak' started at 2026-11-11 19:33:35.624
+Test Case 'SleepExperiencesTests.testThreeGoodNightsAndUnfinishedCurrentDayKeepStreak' passed (0.012 seconds)
+Test Case 'SleepExperiencesTests.testV4MigrationPreservesAllExistingDataAndStartsEmptyFeatures' started at 2026-11-11 19:33:35.637
+Test Case 'SleepExperiencesTests.testV4MigrationPreservesAllExistingDataAndStartsEmptyFeatures' passed (0.003 seconds)
+Test Suite 'SleepExperiencesTests' passed at 2026-11-11 19:33:35.640
+	 Executed 27 tests, with 0 failures (0 unexpected) in 0.27 (0.27) seconds
+Test Suite 'debug.xctest' passed at 2026-11-11 19:33:35.640
+	 Executed 98 tests, with 0 failures (0 unexpected) in 0.638 (0.638) seconds
+Test Suite 'All tests' passed at 2026-11-11 19:33:35.640
+	 Executed 98 tests, with 0 failures (0 unexpected) in 0.638 (0.638) seconds
+◇ Test run started.
+↳ Testing Library Version: 6.2.1 (c9d57c83568b06d)
+↳ Target Platform: x86_64-unknown-linux-gnu
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

@@ -1,0 +1,120 @@
+PASS: 119 structural checks
+PASS Required document exists: README.md
+PASS Required document exists: WINDOWS_START_HERE.md
+PASS Required document exists: ARCHITECTURE.md
+PASS Required document exists: ADDING_FEATURES.md
+PASS Required document exists: Docs/BUILD_AND_INSTALL.md
+PASS Required document exists: Docs/FEATURE_STATUS.md
+PASS Required document exists: Docs/DATA_FORMATS.md
+PASS Required document exists: Docs/DEVICE_TESTING.md
+PASS Required document exists: Docs/SOURCES.md
+PASS Required document exists: Docs/TEST_RESULTS.md
+PASS Valid plist: App-Info.plist
+PASS Valid plist: Widget-Info.plist
+PASS Valid plist: Health.entitlements
+PASS Valid plist: Widget.entitlements
+PASS Valid plist: Basic.entitlements
+PASS Valid plist: PrivacyInfo.xcprivacy
+PASS Purpose string: NSMicrophoneUsageDescription
+PASS Purpose string: NSMotionUsageDescription
+PASS Purpose string: NSHealthShareUsageDescription
+PASS Purpose string: NSAlarmKitUsageDescription
+PASS Health write permission is not requested
+PASS Background mode is audio only
+PASS SwiftUI single-window scene manifest
+PASS Basic has no custom entitlements
+PASS Health entitlement enabled only for optional scheme
+PASS App Group strings match
+PASS Deployment target is iOS 17
+PASS Xcode project regeneration is deterministic and current
+PASS Bundled sleep sounds included in Xcode
+PASS Valid 30-second PCM sound: white
+PASS Valid 30-second PCM sound: pink
+PASS Valid 30-second PCM sound: brown
+PASS Valid 30-second PCM sound: rain
+PASS Valid 30-second PCM sound: ocean
+PASS Valid 30-second PCM sound: fan
+PASS Companion sheet has four animals with five stages
+PASS Companion vector asset is a PDF
+PASS Lotus release version is 1.3 build 4
+PASS Installed display name is Lotus Sleep
+PASS Existing installation identifier preserved
+PASS Xcode includes App/AppStore.swift
+PASS Xcode includes App/LumaSleepApp.swift
+PASS Xcode includes App/Integrations/MotionImporter.swift
+PASS Xcode includes App/Integrations/Shortcuts.swift
+PASS Xcode includes App/Integrations/RelaxationAudio.swift
+PASS Xcode includes App/Integrations/AudioMonitor.swift
+PASS Xcode includes App/Integrations/Reminders.swift
+PASS Xcode includes App/Integrations/WakeAlarmService.swift
+PASS Xcode includes App/Integrations/HealthImporter.swift
+PASS Xcode includes App/Design/DesignSystem.swift
+PASS Xcode includes App/Features/InsightsView.swift
+PASS Xcode includes App/Features/TodayView.swift
+PASS Xcode includes App/Features/NightRewindView.swift
+PASS Xcode includes App/Features/MorningInboxView.swift
+PASS Xcode includes App/Features/SoundBlendsView.swift
+PASS Xcode includes App/Features/TrackView.swift
+PASS Xcode includes App/Features/OnboardingView.swift
+PASS Xcode includes App/Features/HistoryView.swift
+PASS Xcode includes App/Features/SleepExperimentsView.swift
+PASS Xcode includes App/Features/CompanionView.swift
+PASS Xcode includes App/Features/IntegrationViews.swift
+PASS Xcode includes App/Features/PlanningView.swift
+PASS Xcode includes App/Features/DataManagementView.swift
+PASS Xcode includes App/Features/CaffeineView.swift
+PASS Xcode includes App/Features/RelaxationView.swift
+PASS Xcode includes App/Features/NotificationsView.swift
+PASS Xcode includes App/Features/NightLoggingView.swift
+PASS Xcode includes App/Features/SettingsView.swift
+PASS Xcode includes App/Features/SleepProfileView.swift
+PASS Xcode includes App/Features/SoundReplayView.swift
+PASS Xcode includes App/Features/DiaryEditor.swift
+PASS Xcode includes Core/Sources/LumaCore/MorningInbox.swift
+PASS Xcode includes Core/Sources/LumaCore/Persistence.swift
+PASS Xcode includes Core/Sources/LumaCore/DemoData.swift
+PASS Xcode includes Core/Sources/LumaCore/Insights.swift
+PASS Xcode includes Core/Sources/LumaCore/Models.swift
+PASS Xcode includes Core/Sources/LumaCore/SleepExperiences.swift
+PASS Xcode includes Core/Sources/LumaCore/SoundEventDetector.swift
+PASS Xcode includes Core/Sources/LumaCore/ImportExport.swift
+PASS Xcode includes Core/Sources/LumaCore/RestCompanions.swift
+PASS Xcode includes Core/Sources/LumaCore/Personalization.swift
+PASS Xcode includes Core/Sources/LumaCore/Reconciliation.swift
+PASS Xcode includes Core/Sources/LumaCore/NightReview.swift
+PASS Scheme references LumaBasic
+PASS Scheme references LumaHealth
+PASS Asset exists: LumaMark.png
+PASS Asset exists: CompanionSheet.pdf
+PASS Asset exists: Icon-20@2x.png
+PASS Asset exists: Icon-20@3x.png
+PASS Asset exists: Icon-29@2x.png
+PASS Asset exists: Icon-29@3x.png
+PASS Asset exists: Icon-40@2x.png
+PASS Asset exists: Icon-40@3x.png
+PASS Asset exists: Icon-60@2x.png
+PASS Asset exists: Icon-60@3x.png
+PASS Asset exists: Icon-1024@1x.png
+PASS Valid example JSON: migration-v1.json
+PASS Valid example JSON: one-rejected-row.json
+PASS Valid example JSON: sleep-log.json
+PASS Local doc link resolves: WINDOWS_START_HERE.md -> Docs/LOTUS_1_3.md
+PASS Local doc link resolves: WINDOWS_START_HERE.md -> Docs/TEST_RESULTS.md
+PASS Local doc link resolves: WINDOWS_START_HERE.md -> Docs/DEVICE_TESTING.md
+PASS Local doc link resolves: WINDOWS_START_HERE.md -> Docs/BUILD_AND_INSTALL.md
+PASS Local doc link resolves: README.md -> Docs/LOTUS_1_3.md
+PASS Local doc link resolves: README.md -> WINDOWS_START_HERE.md
+PASS Local doc link resolves: README.md -> Docs/BUILD_AND_INSTALL.md
+PASS Local doc link resolves: README.md -> Docs/FEATURE_STATUS.md
+PASS Local doc link resolves: README.md -> ARCHITECTURE.md
+PASS Local doc link resolves: README.md -> ADDING_FEATURES.md
+PASS Local doc link resolves: LOTUS_1_2.md -> LOTUS_1_3.md
+PASS Local doc link resolves: FEATURE_STATUS.md -> LOTUS_1_3.md
+PASS Local doc link resolves: NOXLI_1_1.md -> LOTUS_1_2.md
+PASS Local doc link resolves: TEST_RESULTS.md -> DEVICE_TESTING.md
+PASS Local doc link resolves: TEST_RESULTS.md -> LOTUS_1_3.md
+PASS Local doc link resolves: DEVICE_TESTING.md -> NOXLI_1_1.md
+PASS Local doc link resolves: LOTUS_1_3.md -> DEVICE_TESTING.md
+PASS Local doc link resolves: LOTUS_1_3.md -> TEST_RESULTS.md
+PASS Local doc link resolves: BUILD_AND_INSTALL.md -> ../WINDOWS_START_HERE.md
+PASS Local doc link resolves: BUILD_AND_INSTALL.md -> LOTUS_1_3.md

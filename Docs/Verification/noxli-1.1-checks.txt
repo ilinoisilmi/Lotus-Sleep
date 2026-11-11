@@ -1,0 +1,42 @@
+/tmp/noxli-swift/swift-6.2.1-RELEASE-ubuntu22.04/usr/bin/swiftc -frontend -parse App/LumaSleepApp.swift App/AppStore.swift App/Design/DesignSystem.swift App/Integrations/Reminders.swift App/Integrations/WakeAlarmService.swift App/Integrations/MotionImporter.swift App/Integrations/AudioMonitor.swift App/Integrations/Shortcuts.swift App/Integrations/HealthImporter.swift App/Features/SoundReplayView.swift App/Features/SettingsView.swift App/Features/IntegrationViews.swift App/Features/PlanningView.swift App/Features/DataManagementView.swift App/Features/HistoryView.swift App/Features/TrackView.swift App/Features/OnboardingView.swift App/Features/InsightsView.swift App/Features/DiaryEditor.swift App/Features/NightLoggingView.swift App/Features/TodayView.swift Core/Sources/LumaCore/Reconciliation.swift Core/Sources/LumaCore/ImportExport.swift Core/Sources/LumaCore/Persistence.swift Core/Sources/LumaCore/Insights.swift Core/Sources/LumaCore/SoundEventDetector.swift Core/Sources/LumaCore/DemoData.swift Core/Sources/LumaCore/Models.swift Core/Sources/LumaCore/NightReview.swift
+Exit: 0
+
+/tmp/noxli-swift/swift-6.2.1-RELEASE-ubuntu22.04/usr/bin/swiftc -frontend -parse -D HEALTH_ENABLED App/LumaSleepApp.swift App/AppStore.swift App/Design/DesignSystem.swift App/Integrations/Reminders.swift App/Integrations/WakeAlarmService.swift App/Integrations/MotionImporter.swift App/Integrations/AudioMonitor.swift App/Integrations/Shortcuts.swift App/Integrations/HealthImporter.swift App/Features/SoundReplayView.swift App/Features/SettingsView.swift App/Features/IntegrationViews.swift App/Features/PlanningView.swift App/Features/DataManagementView.swift App/Features/HistoryView.swift App/Features/TrackView.swift App/Features/OnboardingView.swift App/Features/InsightsView.swift App/Features/DiaryEditor.swift App/Features/NightLoggingView.swift App/Features/TodayView.swift Core/Sources/LumaCore/Reconciliation.swift Core/Sources/LumaCore/ImportExport.swift Core/Sources/LumaCore/Persistence.swift Core/Sources/LumaCore/Insights.swift Core/Sources/LumaCore/SoundEventDetector.swift Core/Sources/LumaCore/DemoData.swift Core/Sources/LumaCore/Models.swift Core/Sources/LumaCore/NightReview.swift
+Exit: 0
+
+/tmp/noxli-swift/swift-6.2.1-RELEASE-ubuntu22.04/usr/bin/swiftc -frontend -parse Widget/LumaWidget.swift Tests/LumaUITests.swift
+Exit: 0
+
+bash -n Scripts/build_unsigned_ipa.sh
+Exit: 0
+
+python3 -m unittest discover -s Scripts -p test_package_ipa.py -v
+Created unsigned IPA: /tmp/tmp32do2w8b/export/test-only.ipa (542 bytes)
+test_extension_build_rejected (test_package_ipa.PackagingTests.test_extension_build_rejected) ... ok
+test_payload_and_permissions (test_package_ipa.PackagingTests.test_payload_and_permissions) ... ok
+test_simulator_rejected (test_package_ipa.PackagingTests.test_simulator_rejected) ... ok
+test_source_instead_of_binary_rejected (test_package_ipa.PackagingTests.test_source_instead_of_binary_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.003s
+
+OK
+Exit: 0
+
+git diff --check
+Exit: 0
+
+PASS: original signing identifier, data directory and JSON path retained; new display name set.
+
+Final source verification after quick-log evidence and wake-up precision fixes:
+PASS Swift Basic/Health/widget/UI parse
+PASS Swift Basic/Health/widget/UI parse
+PASS Swift Basic/Health/widget/UI parse
+PASS git diff --check
+PASS: 55 core XCTest tests.
+
+Final UI verification after event pagination and playback cleanup:
+Basic app/core syntax: PASS
+Health app/core syntax: PASS
+Widget/UI test syntax: PASS
+git diff --check: PASS

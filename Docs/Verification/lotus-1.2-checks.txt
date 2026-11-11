@@ -1,0 +1,39 @@
+Basic app/core syntax: PASS
+
+Health app/core syntax: PASS
+
+Widget/UI-test syntax: PASS
+
+IPA script syntax: PASS
+
+IPA packaging tests: PASS
+
+Created unsigned IPA: /tmp/tmppil7ccao/export/test-only.ipa (542 bytes)
+
+test_extension_build_rejected (test_package_ipa.PackagingTests.test_extension_build_rejected) ... ok
+test_payload_and_permissions (test_package_ipa.PackagingTests.test_payload_and_permissions) ... ok
+test_simulator_rejected (test_package_ipa.PackagingTests.test_simulator_rejected) ... ok
+test_source_instead_of_binary_rejected (test_package_ipa.PackagingTests.test_source_instead_of_binary_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.003s
+
+OK
+
+Whitespace validation: PASS
+
+PASS audio brown: 30s mono PCM, peak 0.526, RMS 0.120, DC 0.0000000, seam/adjacent-RMS 1.10
+
+PASS audio fan: 30s mono PCM, peak 0.586, RMS 0.120, DC 0.0000000, seam/adjacent-RMS 0.24
+
+PASS audio ocean: 30s mono PCM, peak 0.620, RMS 0.085, DC 0.0000000, seam/adjacent-RMS 0.41
+
+PASS audio pink: 30s mono PCM, peak 0.569, RMS 0.120, DC 0.0000000, seam/adjacent-RMS 1.66
+
+PASS audio rain: 30s mono PCM, peak 0.620, RMS 0.113, DC 0.0000000, seam/adjacent-RMS 0.56
+
+PASS audio white: 30s mono PCM, peak 0.603, RMS 0.120, DC 0.0000000, seam/adjacent-RMS 0.08
+
+PASS: 101 structural checks
+
+Final Basic/Health/widget/UI syntax and whitespace checks: PASS after notification-toggle and inline-error refinements.
