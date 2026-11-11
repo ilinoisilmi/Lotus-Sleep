@@ -94,3 +94,74 @@ jobs:
             2>&1 | tee build/logs/packaging-tests.txt
 
       - name: Run Swift core tests
+        working-directory: merged
+        run: |
+          set -euo pipefail
+          swift test --package-path Core -j 1 -Xswiftc -disable-batch-mode \
+            2>&1 | tee build/logs/core-tests.txt
+
+      - name: Build and package unsigned Lotus iPhone IPA
+        working-directory: merged
+        run: |
+          set -euo pipefail
+          bash Scripts/build_unsigned_ipa.sh
+
+          # The original build script outputs LumaSleep-unsigned.ipa.
+          # Keep its verified build/packaging procedure and rename only the export.
+          test -s build/export/LumaSleep-unsigned.ipa
+          mv build/export/LumaSleep-unsigned.ipa \
+            build/export/LotusSleep-unsigned.ipa
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib
+          import zipfile
+
+          export = Path('build/export')
+          ipa = export / 'LotusSleep-unsigned.ipa'
+          with zipfile.ZipFile(ipa) as archive:
+              if archive.testzip() is not None:
+                  raise SystemExit('IPA ZIP integrity test failed')
+              if not any(name.startswith('Payload/LumaSleep.app/') for name in archive.namelist()):
+                  raise SystemExit('IPA does not contain the built iPhone app')
+          digest = hashlib.sha256(ipa.read_bytes()).hexdigest()
+          (export / 'SHA256.txt').write_text(f'{digest}  {ipa.name}\n')
+          notes = export / 'READ_ME.txt'
+          if notes.exists():
+              notes.write_text(notes.read_text().replace('Luma Sleep:', 'Lotus Sleep:'))
+          print(f'IPA ready: {ipa} ({ipa.stat().st_size:,} bytes)')
+          PY
+
+      - name: Publish IPA through GitHub Releases (alternative download)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          IPA="merged/build/export/LotusSleep-unsigned.ipa"
+          test -s "$IPA"
+          TAG="lotus-sideload-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          gh release create "$TAG" "$IPA" \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$GITHUB_SHA" \
+            --title "Lotus Sleep iPhone test build #${GITHUB_RUN_NUMBER}" \
+            --notes "Unsigned iPhone app for Sideloadly. Sign it using your own Apple account. This is a test build, not an App Store release." \
+            --prerelease --latest=false
+          echo "Download your IPA from https://github.com/${GITHUB_REPOSITORY}/releases/tag/${TAG}"
+
+      - name: Upload Lotus Sleep IPA for Sideloadly
+        uses: actions/upload-artifact@v7
+        with:
+          name: LotusSleep-unsigned-ipa
+          path: merged/build/export/
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
+
+      - name: Upload build diagnostics
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: LotusSleep-build-logs
+          path: merged/build/logs/
+          if-no-files-found: warn
+          retention-days: 7
